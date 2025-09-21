@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة الإلكترونية الحديثة</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- WowSlider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://wowslider.com/sliders/demo-18/engine1/style.css" />
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-book-open me-2"></i>
+                    المكتبة الإلكترونية الحديثة
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/books.html">الكتب</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/categories.html">التصنيفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/about.html">من نحن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/contact.html">اتصل بنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-light btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-sign-in-alt me-1"></i>دخول
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-light btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                <i class="fas fa-user-plus me-1"></i>تسجيل
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide bg-gradient-primary">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 text-white fw-bold mb-4">مرحباً بك في المكتبة الإلكترونية الحديثة</h1>
+                                    <p class="lead text-white-50 mb-4">اكتشف عالماً من المعرفة والكتب الرقمية في مكان واحد</p>
+                                    <button class="btn btn-light btn-lg me-3" onclick="showWelcomeToast()">
+                                        <i class="fas fa-search me-2"></i>ابدأ البحث
+                                    </button>
+                                    <button class="btn btn-outline-light btn-lg">
+                                        <i class="fas fa-book me-2"></i>تصفح الكتب
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="hero-image">
+                                        <i class="fas fa-book-reader fa-10x text-white-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-slide bg-gradient-success">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 text-white fw-bold mb-4">مكتبة رقمية شاملة</h1>
+                                    <p class="lead text-white-50 mb-4">آلاف الكتب في جميع المجالات والتخصصات</p>
+                                    <button class="btn btn-light btn-lg">
+                                        <i class="fas fa-download me-2"></i>حمل الآن
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="hero-image">
+                                        <i class="fas fa-laptop fa-10x text-white-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-slide bg-gradient-info">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 text-white fw-bold mb-4">قراءة ممتعة ومفيدة</h1>
+                                    <p class="lead text-white-50 mb-4">استمتع بتجربة قراءة فريدة ومميزة</p>
+                                    <button class="btn btn-light btn-lg">
+                                        <i class="fas fa-play me-2"></i>ابدأ القراءة
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="hero-image">
+                                        <i class="fas fa-glasses fa-10x text-white-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">مميزات المكتبة</h2>
+                    <p class="lead text-muted">اكتشف ما يميز مكتبتنا الإلكترونية</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-book-open fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">مكتبة شاملة</h4>
+                        <p class="text-muted">آلاف الكتب في جميع المجالات والتخصصات المختلفة</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-search fa-3x text-success"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">بحث متقدم</h4>
+                        <p class="text-muted">نظام بحث ذكي للعثور على الكتب بسهولة وسرعة</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-mobile-alt fa-3x text-info"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">متوافق مع الجوال</h4>
+                        <p class="text-muted">تصميم متجاوب يعمل على جميع الأجهزة والشاشات</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-download fa-3x text-warning"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">تحميل سريع</h4>
+                        <p class="text-muted">حمل الكتب بصيغ مختلفة بسرعة عالية</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-users fa-3x text-danger"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">مجتمع القراء</h4>
+                        <p class="text-muted">انضم إلى مجتمع من القراء وشارك تجاربك</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 p-4 text-center border rounded-3 shadow-sm">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-shield-alt fa-3x text-secondary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">آمن ومحمي</h4>
+                        <p class="text-muted">نظام حماية متقدم لضمان أمان بياناتك</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Books Section -->
+    <section class="popular-books py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">الكتب الأكثر شعبية</h2>
+                    <p class="lead text-muted">اكتشف أحدث وأشهر الكتب في مكتبتنا</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="book-card h-100 bg-white rounded-3 shadow-sm overflow-hidden">
+                        <div class="book-cover bg-primary d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-book fa-4x text-white"></i>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold mb-2">كتاب البرمجة الحديثة</h5>
+                            <p class="text-muted small mb-2">المؤلف: أحمد محمد</p>
+                            <p class="text-muted small">دليل شامل لتعلم البرمجة من الصفر</p>
+                            <button class="btn btn-primary btn-sm w-100" onclick="showBookModal('book1')">
+                                <i class="fas fa-eye me-1"></i>عرض التفاصيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="book-card h-100 bg-white rounded-3 shadow-sm overflow-hidden">
+                        <div class="book-cover bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-book fa-4x text-white"></i>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold mb-2">أساسيات التصميم</h5>
+                            <p class="text-muted small mb-2">المؤلف: فاطمة علي</p>
+                            <p class="text-muted small">تعلم مبادئ التصميم الجرافيكي</p>
+                            <button class="btn btn-success btn-sm w-100" onclick="showBookModal('book2')">
+                                <i class="fas fa-eye me-1"></i>عرض التفاصيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="book-card h-100 bg-white rounded-3 shadow-sm overflow-hidden">
+                        <div class="book-cover bg-info d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-book fa-4x text-white"></i>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold mb-2">إدارة الأعمال</h5>
+                            <p class="text-muted small mb-2">المؤلف: محمد حسن</p>
+                            <p class="text-muted small">استراتيجيات النجاح في الأعمال</p>
+                            <button class="btn btn-info btn-sm w-100" onclick="showBookModal('book3')">
+                                <i class="fas fa-eye me-1"></i>عرض التفاصيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="book-card h-100 bg-white rounded-3 shadow-sm overflow-hidden">
+                        <div class="book-cover bg-warning d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-book fa-4x text-white"></i>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold mb-2">علم النفس</h5>
+                            <p class="text-muted small mb-2">المؤلف: سارة أحمد</p>
+                            <p class="text-muted small">فهم السلوك الإنساني والنفسي</p>
+                            <button class="btn btn-warning btn-sm w-100" onclick="showBookModal('book4')">
+                                <i class="fas fa-eye me-1"></i>عرض التفاصيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold text-primary">10,000+</h3>
+                        <p class="text-muted">كتاب متاح</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <i class="fas fa-users fa-3x text-success mb-3"></i>
+                        <h3 class="fw-bold text-success">50,000+</h3>
+                        <p class="text-muted">مستخدم نشط</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <i class="fas fa-download fa-3x text-info mb-3"></i>
+                        <h3 class="fw-bold text-info">1,000,000+</h3>
+                        <p class="text-muted">تحميل</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <i class="fas fa-star fa-3x text-warning mb-3"></i>
+                        <h3 class="fw-bold text-warning">4.9</h3>
+                        <p class="text-muted">تقييم المستخدمين</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-book-open me-2"></i>
+                        المكتبة الإلكترونية الحديثة
+                    </h5>
+                    <p class="text-white-50">مكتبة رقمية شاملة تهدف إلى نشر المعرفة وتسهيل الوصول إلى الكتب والمراجع العلمية.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/967779644339" class="text-white me-3" target="_blank">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="mailto:yahayaljoby3@gmail.com" class="text-white me-3">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <a href="tel:967779644339" class="text-white me-3">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">روابط سريعة</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
+                        <li><a href="html/books.html" class="text-white-50 text-decoration-none">الكتب</a></li>
+                        <li><a href="html/categories.html" class="text-white-50 text-decoration-none">التصنيفات</a></li>
+                        <li><a href="html/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">معلومات الاتصال</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li><i class="fas fa-phone me-2"></i>967779644339</li>
+                        <li><i class="fas fa-envelope me-2"></i>yahayaljoby3@gmail.com</li>
+                        <li><i class="fab fa-whatsapp me-2"></i>واتساب: 967779644339</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6 class="fw-bold mb-3">النشرة الإخبارية</h6>
+                    <p class="text-white-50 small">اشترك للحصول على آخر الأخبار والكتب الجديدة</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
+                        <button class="btn btn-primary" type="button" onclick="subscribeNewsletter()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2024 المكتبة الإلكترونية الحديثة. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-white-50 mb-0">تم التطوير بواسطة فريق المكتبة الإلكترونية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تسجيل الدخول</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">كلمة المرور</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">تذكرني</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" onclick="handleLogin()">دخول</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">إنشاء حساب جديد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">الاسم الكامل</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">كلمة المرور</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">تأكيد كلمة المرور</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">أوافق على الشروط والأحكام</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" onclick="handleRegister()">تسجيل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div class="modal fade" id="bookModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookModalTitle">تفاصيل الكتاب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="bookModalBody">
+                    <!-- Book details will be loaded here via AJAX -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-download me-1"></i>تحميل الكتاب
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+

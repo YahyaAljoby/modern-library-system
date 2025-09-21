@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتب - المكتبة الإلكترونية الحديثة</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <i class="fas fa-book-open me-2"></i>
+                    المكتبة الإلكترونية الحديثة
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="books.html">الكتب</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">التصنيفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">من نحن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">مكتبة الكتب</h1>
+                    <p class="lead">اكتشف مجموعة واسعة من الكتب في جميع المجالات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-6 mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="ابحث عن كتاب...">
+                        <button class="btn btn-primary" type="button" onclick="performSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 mb-3">
+                    <select class="form-select" id="categoryFilter">
+                        <option value="">جميع التصنيفات</option>
+                        <option value="programming">البرمجة</option>
+                        <option value="design">التصميم</option>
+                        <option value="business">الأعمال</option>
+                        <option value="psychology">علم النفس</option>
+                        <option value="science">العلوم</option>
+                        <option value="literature">الأدب</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-3 mb-3">
+                    <select class="form-select" id="sortFilter">
+                        <option value="newest">الأحدث</option>
+                        <option value="popular">الأكثر شعبية</option>
+                        <option value="rating">الأعلى تقييماً</option>
+                        <option value="alphabetical">أبجدياً</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Grid Section -->
+    <section class="books-grid py-5">
+        <div class="container">
+            <div class="row" id="booksContainer">
+                <!-- Books will be loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <nav aria-label="صفحات الكتب">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">السابق</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">التالي</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-book-open me-2"></i>
+                        المكتبة الإلكترونية الحديثة
+                    </h5>
+                    <p class="text-white-50">مكتبة رقمية شاملة تهدف إلى نشر المعرفة وتسهيل الوصول إلى الكتب والمراجع العلمية.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/967779644339" class="text-white me-3" target="_blank">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="mailto:yahayaljoby3@gmail.com" class="text-white me-3">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <a href="tel:967779644339" class="text-white me-3">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">روابط سريعة</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
+                        <li><a href="books.html" class="text-white-50 text-decoration-none">الكتب</a></li>
+                        <li><a href="categories.html" class="text-white-50 text-decoration-none">التصنيفات</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">معلومات الاتصال</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li><i class="fas fa-phone me-2"></i>967779644339</li>
+                        <li><i class="fas fa-envelope me-2"></i>yahayaljoby3@gmail.com</li>
+                        <li><i class="fab fa-whatsapp me-2"></i>واتساب: 967779644339</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6 class="fw-bold mb-3">النشرة الإخبارية</h6>
+                    <p class="text-white-50 small">اشترك للحصول على آخر الأخبار والكتب الجديدة</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
+                        <button class="btn btn-primary" type="button" onclick="subscribeNewsletter()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2024 المكتبة الإلكترونية الحديثة. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-white-50 mb-0">تم التطوير بواسطة فريق المكتبة الإلكترونية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/books.js"></script>
+</body>
+</html>
+
