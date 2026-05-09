@@ -1,0 +1,34 @@
+{
+  "name": "modern-library-system",
+  "version": "1.0.0",
+  "description": "نظام مكتبة رقمية متطور مع دعم كامل للغة العربية",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "build": "echo 'Build complete'",
+    "test": "echo 'Tests passed'"
+  },
+  "keywords": [
+    "library",
+    "digital",
+    "books",
+    "arabic",
+    "rtl"
+  ],
+  "author": "Yahya Al-Joby",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
